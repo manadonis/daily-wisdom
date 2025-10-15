@@ -12,6 +12,27 @@ export default function Document() {
         />
         <meta name="description" content="Daily wisdom from influential figures who have positively impacted humanity. One carefully curated quote each day." />
         <meta name="theme-color" content="#1a1a1a" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  if(window.location && window.location.search && window.location.search.indexOf('capture-sitebehaviour-heatmap') !== -1) {
+                    sessionStorage.setItem('capture-sitebehaviour-heatmap', '_');
+                  }
+                  var sbSiteSecret = '89565915-bb72-4b7a-bb02-8f0a449ee7cf';
+                  window.sitebehaviourTrackingSecret = sbSiteSecret;
+                  var scriptElement = document.createElement('script');
+                  scriptElement.defer = true;
+                  scriptElement.id = 'site-behaviour-script-v2';
+                  scriptElement.src = 'https://sitebehaviour-cdn.fra1.cdn.digitaloceanspaces.com/index.min.js?sitebehaviour-secret=' + sbSiteSecret;
+                  document.head.appendChild(scriptElement); 
+                }
+                catch (e) {console.error(e)}
+              })()
+            `,
+          }}
+        />
       </Head>
       <body>
         <Main />
