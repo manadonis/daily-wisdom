@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Quote } from '../types/Quote';
+import QuoteArt from './QuoteArt';
 
 interface QuoteDisplayProps {
   quote: Quote;
@@ -27,6 +28,8 @@ export default function QuoteDisplay({ quote, showDate = false, dateLabel }: Quo
       {showDate && dateLabel && (
         <div className="date-label">{dateLabel}</div>
       )}
+      
+      <QuoteArt quote={quote.quote} author={quote.author} />
       
       <blockquote className="quote-text">
         "{quote.quote}"
